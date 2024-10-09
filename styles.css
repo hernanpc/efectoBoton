@@ -1,0 +1,55 @@
+/* Configuración básica del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* Título */
+h1 {
+    color: #333;
+}
+
+/* Estilos para el botón */
+.ripple-button {
+    position: relative; /* Necesario para posicionar el efecto dentro del botón */
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden; /* Ocultar el efecto cuando sale del botón */
+    transition: background-color 0.3s;
+}
+
+/* Cambio de color cuando se pasa el ratón por encima del botón */
+.ripple-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el efecto de onda */
+.ripple {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-effect 0.5s linear;
+    pointer-events: none; /* Elimina la interacción con el elemento de onda */
+}
+
+/* Animación del efecto de onda */
+@keyframes ripple-effect {
+    to {
+        transform: scale(4); /* La onda crece hasta 4 veces su tamaño original */
+        opacity: 0; /* La onda se desvanece gradualmente */
+    }
+}
